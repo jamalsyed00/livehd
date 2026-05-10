@@ -1,4 +1,6 @@
 # livehd specific bazel options
+# Machine-local overrides (compiler selection, VM-specific tweaks)
+try-import %workspace%/user.bazelrc
 build --output_filter='^//(core|pass|inou)'
 build --repo_env=BAZEL_CONLYOPTS="-std=gnu17"
 build --cxxopt="-std=c++23" --cxxopt="-fexceptions" --force_pic --build_tag_filters="-fixme"
